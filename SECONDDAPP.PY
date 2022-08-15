@@ -48,7 +48,7 @@ def upload_file():
 
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(r'/common/home/ks881/Desktop/folderproj' ,filename))
+            file.save(os.path.join(r'/ws/viselvar-sjc/test/LFILE/' ,filename))
             return redirect(url_for('download_file', name=filename))
     return render_template("mainpage.html")
 app.add_url_rule(
@@ -61,7 +61,7 @@ app.add_url_rule(
 def myfile(name):
     jobname=name.strip('.txt')
     if name.endswith('zip'):
-        name=r'/common/home/ks881/Desktop/folderproj/UPLOAD_FOLDER/TaskLog.Task-1'
+        name=r'/ws/viselvar-sjc/test/LFILE/UPLOAD_FOLDER/TaskLog.Task-1'
     with open(name,'r') as log:
         f=log.read()
     versionget=open('versiongit.txt','w')
@@ -115,9 +115,9 @@ def myfile(name):
     var=tablebabmaker.tablemaker(jobname,versionget)
     #dict1={}
     #dict1=loglinkdata.loglinkdatamethod()
-    outputfile=r'/common/home/ks881/Desktop/folderproj/templates/momma.html'
+    outputfile=r'/ws/viselvar-sjc/test/LFILE/templates/momma.html'
     app.config['TEMPLATES_AUTO_RELOAD'] = True
-    fuk=open(r'/common/home/ks881/Desktop/folderproj/templates/momma.html','w+')
+    fuk=open(r'/ws/viselvar-sjc/test/LFILE/templates/templates/momma.html','w+')
     fj=open('momma.html','r')
     for lines in fj:
         #print(lines)
